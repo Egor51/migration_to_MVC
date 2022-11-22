@@ -29,7 +29,7 @@ public class PostRepositoryImpl implements PostRepository {
 
     @Override
     public Collection<PostDto> getById(long id) {
-        if (data.contains(id)) {
+        if (data.get(id).getRemove()) {
             return new ArrayList<>(data.values()).stream()
                     .filter(x -> x.getId() == id)
                     .filter(Post::getRemove)
