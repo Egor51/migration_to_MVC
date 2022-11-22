@@ -34,5 +34,5 @@ public class Post {
     public void setRemove(boolean remove) {
         this.remove = remove;
     }
-    public boolean getRemove(){return remove;}
+    public boolean getRemove(){return !remove;}
 }

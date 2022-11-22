@@ -1,6 +1,6 @@
 package app.spring.service;
 
-import app.spring.exception.NotFoundException;
+
 import app.spring.model.Post;
 import app.spring.model.PostDto;
 import app.spring.repositoriy.PostRepository;
@@ -22,8 +22,8 @@ public class PostService {
         return repository.all();
     }
 
-    public Post getById(long id) {
-        return repository.getById(id).orElseThrow(NotFoundException::new);
+    public Collection<PostDto> getById(long id) {
+        return repository.getById(id);
     }
 
     public Post save(Post post) {
