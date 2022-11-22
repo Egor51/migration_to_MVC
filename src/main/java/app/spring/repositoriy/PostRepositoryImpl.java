@@ -30,6 +30,8 @@ public class PostRepositoryImpl implements PostRepository {
     @Override
     public Collection<PostDto> getById(long id) {
         if (data.get(id).getRemove()) {
+            // return Optional.ofNullable(data.get(id)).stream().map(this::toPostDto).collect(Collectors.toList());
+
             return new ArrayList<>(data.values()).stream()
                     .filter(x -> x.getId() == id)
                     .filter(Post::getRemove)
